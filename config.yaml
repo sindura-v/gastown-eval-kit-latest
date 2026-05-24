@@ -1,0 +1,58 @@
+# ============================================================
+# Gastown Eval Kit - Configuration
+# ============================================================
+# Edit this file before running the eval. Only "agent" section
+# is required — everything else has sensible defaults.
+# ============================================================
+
+# --- Agent + Skills Settings ---
+agent:
+  # Path to your agent prompt file.
+  # Option A: Auto-detect from this workspace (recommended)
+  #   Leave as "auto" and ensure your .github/agents/AGENTS.md
+  #   file exists in this repo.
+  # Option B: Explicit VS Code userdata path
+  #   e.g. "vscode-userdata:/Users/yourname/Library/Application Support/Code/User/prompts/data-science-standards.agent.md"
+  prompt_path: "auto"
+
+  # Path to the workspace agent file (relative to repo root).
+  # Optional: if omitted or missing, eval runs in skills-only mode.
+  agent_file: ""
+
+  # Path to your skills directory (relative to repo root).
+  # If this directory contains subdirectories each with a SKILL.md, all skills
+  # are loaded and concatenated into the eval system message.
+  skills_dir: ".claude/skills"
+
+# --- Model Settings ---
+model:
+  # Copilot model to use for evaluation
+  # Common options: gpt-4.1, claude-sonnet-4.6
+  name: "gpt-4.1"
+
+# --- Questions ---
+questions:
+  # Path to the questions CSV file (relative to repo root)
+  csv_path: "questions.csv"
+
+# --- Execution Settings ---
+execution:
+  # Timeout per question in seconds (increase if your agent is slow)
+  timeout_seconds: 120
+
+  # Number of retries per question on failure
+  retries: 2
+
+  # Delay between retries in milliseconds
+  retry_delay_ms: 3000
+
+  # Save partial results if the run is interrupted?
+  save_partial: true
+
+# --- Output Settings ---
+output:
+  # Output file name
+  file: "ghcp_eval_traces.json"
+
+  # Validate output against leaderboard schema before writing?
+  validate: true

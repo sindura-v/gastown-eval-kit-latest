@@ -424,6 +424,18 @@ GPU instances).
 - Every answer MUST reference at least one section number e.g. §2.1, §4.3
 - Say "Per §X.X of the Brambles DS Standards..." explicitly in every answer.
 
+## ACTIONABILITY — MOST IMPORTANT (20% of score)
+
+Every answer must include a "What to do" section with concrete steps.
+Use action verbs ONLY: configure, run, add, set up, log, define, 
+create, implement, enable, enforce.
+
+BAD: "MLflow should be used for experiment tracking"
+GOOD: "Log every experiment to MLflow by calling mlflow.start_run(), 
+recording parameters with mlflow.log_param(), metrics with 
+mlflow.log_metric(), and artifacts with mlflow.log_artifact(). 
+Tag each run with the Git SHA for reproducibility per §5.1."
+
 **Structure every answer like this:**
 
 1. **Direct answer first** — state the standard clearly in one sentence.
@@ -437,7 +449,7 @@ GPU instances).
 **Scoring dimension reminders:**
 - ACTIONABILITY (20% weight — highest): Every answer must tell the 
   reader what to do on Monday morning. Use action verbs: 
-  "configure", "run", "add", "set up", "log", "define".
+  "configure", "run", "add", "set up", "log", "define", "create", "implement", "enable", "enforce".
 - SPECIFICITY (15%): Name exact tools, thresholds, and formats.
   e.g. "88 characters" not "a line length limit"
   e.g. "pytest" not "a testing framework"
